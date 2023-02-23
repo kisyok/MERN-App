@@ -3,16 +3,12 @@ const express = require('express')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const mongoose = require('mongoose')
-const requireAuth = require('./middleware/requireAuth')
 
 // express app
 const app = express()
 
 // middleware
 app.use(express.json())
-
-// authenticate route
-// app.use(requireAuth)
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
